@@ -1,15 +1,9 @@
 name: CI
 
-permissions:
-  contents: read
-
 on:
   push:
   pull_request:
   workflow_dispatch:
-
-env:
-  FOUNDRY_PROFILE: ci
 
 jobs:
   check:
@@ -26,7 +20,7 @@ jobs:
         uses: foundry-rs/foundry-toolchain@v1
 
       - name: Install dependencies
-        run: forge install --recursive
+        run: forge install -- --no-commit
 
       - name: Show Forge version
         run: forge --version
