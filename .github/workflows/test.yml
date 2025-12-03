@@ -17,8 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v5
+      - uses: actions/checkout@v5
         with:
           persist-credentials: false
           submodules: recursive
@@ -26,13 +25,8 @@ jobs:
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
 
-      - name: Configure git (required for forge install)
-        run: |
-          git config --global url."https://github.com/".insteadOf "git@github.com:"
-          git config --global url."https://".insteadOf "ssh://"
-
       - name: Install dependencies
-        run: forge install --no-commit --recursive
+        run: forge install --recursive
 
       - name: Show Forge version
         run: forge --version
