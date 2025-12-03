@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.30;
+//Make a contract with a mapping from address to uint balance.
 
 contract BalanceTracker {
     mapping(address => uint) public balanceOf;
