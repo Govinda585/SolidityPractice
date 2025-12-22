@@ -5,7 +5,7 @@ pragma solidity ^0.8.30;
 
 contract EtherVault {
     uint256 public totalBalance;
-    mapping(address => uint256) balanceOf;
+    mapping(address => uint256) public balanceOf;
 
     event Deposited(
         address indexed by,
