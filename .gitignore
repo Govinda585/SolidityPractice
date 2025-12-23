@@ -2,6 +2,7 @@
 lib/
 out/
 cache/
+broadcast/
 
 # Coverage reports
 coverage/
